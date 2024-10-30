@@ -56,7 +56,7 @@
                 </svg>
         </button>
   <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-<?php
+<!-- <?php
 // $minenav = array(
 //   'theme_location'  => 'headermenu',
 //   'menu'            => '',
@@ -66,8 +66,8 @@
 //   'menu_class'      => 'menu-li px-5 py-3 ',
 //   'menu_id'         => 'px-5 py-3',
 //   'items_wrap'      => '<ul class="font-large  flex flex-col p-4 md:p-0 mt-4  rounded-lg font-sans md:flex-row md:space-x-8 md:mt-0 md:border-0 >%3$s</ul>',
-//   //'after_item'     => '<a class="block py-2 px-1 rounded text-xl text-secondary md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">%3$s</a>'
-// ); 
+//   'after_item'     => '<a class="block py-2 px-1 rounded text-xl text-secondary md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">%3$s</a>'
+// ); -->
 $select_menu_title = wp_get_nav_menu_items( "header menu" );
  //var_dump($select_menu_title);
  //var_dump($select_menu_title['0']);
