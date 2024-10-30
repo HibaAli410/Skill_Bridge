@@ -23,9 +23,9 @@
             medwhite: '#FCFCFD',
             back_color_home: '#f7f7f8',
             third_font_co: '#333333',
-            forth_font_co:'#59595A'
-            
-          }
+            forth_font_co:'#59595A',
+            ffith_font:'$4C4C4D',
+            }
         }
       }
     }
@@ -57,20 +57,51 @@
         </button>
   <div class="hidden w-full md:block md:w-auto" id="navbar-default">
 <?php
-$minenav = array(
-  'theme_location'  => 'headermenu',
-  'menu'            => '',
-  'container'       => false,
-  'container_id'    => '',
-  'menu-item'       =>'', 
-  'menu_class'      => 'menu-li px-5 py-3 ',
-  'menu_id'         => 'px-5 py-3',
-  'items_wrap'      => '<ul class="font-large  flex flex-col p-4 md:p-0 mt-4  rounded-lg font-sans md:flex-row md:space-x-8 md:mt-0 md:border-0 >%3$s</ul>',
-  //'after_item'     => '<a class="block py-2 px-1 rounded text-xl text-secondary md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">%3$s</a>'
-);  ?>
+// $minenav = array(
+//   'theme_location'  => 'headermenu',
+//   'menu'            => '',
+//   'container'       => false,
+//   'container_id'    => '',
+//   'menu-item'       =>'', 
+//   'menu_class'      => 'menu-li px-5 py-3 ',
+//   'menu_id'         => 'px-5 py-3',
+//   'items_wrap'      => '<ul class="font-large  flex flex-col p-4 md:p-0 mt-4  rounded-lg font-sans md:flex-row md:space-x-8 md:mt-0 md:border-0 >%3$s</ul>',
+//   //'after_item'     => '<a class="block py-2 px-1 rounded text-xl text-secondary md:hover:bg-transparent md:border-0  md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">%3$s</a>'
+// ); 
+$select_menu_title = wp_get_nav_menu_items( "header menu" );
+ //var_dump($select_menu_title);
+ //var_dump($select_menu_title['0']);
+ //var_dump($select_menu_title['1']);
+ //var_dump($select_menu_title['2']);
+ //var_dump($select_menu_title['3']);
+//  var_dump($select_menu_title[1]->title);
+//  var_dump($select_menu_title[3]->title);
+//  var_dump($select_menu_title[0]->title);
+//  var_dump($select_menu_title[1]->url);
+//  var_dump($select_menu_title[4]->url);
+//  var_dump($select_menu_title[3]->url);
+//var_dump($select_menu_title[3]->post_title);
 
-<a class="block w-100 h-55 py-2 px-1 text-xl text-secondary md:border-0 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">  <?php  wp_nav_menu( $minenav ); ?></a>
-<!-- <ul class="font-medium flex flex-col p-4 md:p-0 mt-4  rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+//var_dump($select_menu_title[1]->id); ?>
+<ul class="font-medium flex flex-col p-4 m-4 md:p-0 mt-4 align-center  rounded-lg  md:flex-row md:space-x-8 md:dark:bg-gray-900 dark:border-gray-700">
+<?php $homepage = site_url();
+
+ foreach ($select_menu_title as $title) {
+  
+   
+  if($title->url==$homepage){
+    echo "<li class='bg-home px-8 py-3 rounded-lg '>";
+  }
+  else{
+    echo "<li class=' px-5 py-3 rounded-lg'>";
+  }
+    echo "<a href = '".$title->url."' class='block w-100 h-55 py-2 px-1 text-Xl font-bold font-normal text-secondary md:border-0 rounded md:bg-transparent md:p-0 dark:text-white ' >" ;
+        echo $title->title."</a></li>";
+ }
+ ?>
+</ul>
+<!--<a class="block w-100 h-55 py-2 px-1 text-xl text-secondary md:border-0 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">  <?php  //wp_nav_menu( $minenav ); ?></a>
+ <ul class="font-medium flex flex-col p-4 md:p-0 mt-4  rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
   <li class="bg-hover_pro px-5 py-3 border rounded-lg">
       <a href="#" class="block w-100 h-55 py-2 px-1 text-xl text-secondary md:border-0 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
   </li>
@@ -195,8 +226,8 @@ $minenav = array(
 <div  class="flex justify-center py-4  flex-wrap ">
     <div class="container inline-flex  h-50 px-4 rounded-lg pt-12">
         <div class="rounded-lg  " id="about" role="tabpanel" aria-labelledby="about-tab">
-        <h2 class="mb-3 text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Benefits</h2>
-        <p class="text-gray-500  leading-3 tracking-tight w-100 h-20 leading-7">Lorem ipsum dolor sit amet consectetur. 
+        <h2 class="mb-3 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">Benefits</h2>
+        <p class="text-gray-500 text-base text-forth_font_co tracking-loose font-lg w-auto h-20 leading-7 w-50 m-2">Lorem ipsum dolor sit amet consectetur. 
         Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et.Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
         </div>
         <div class = "flex inlne-flex pt-12 pl-40 pr-0 p-4 ">
@@ -213,11 +244,11 @@ $minenav = array(
             <div class="block p-2  text-right">
               <h2 class="mb-3 pt-4 pr-8 text-6xl font-bold tracking-tight font-bold  text-gray-900 dark:text-white">01</h2>
             </div>
-            <div class="block p-2">
-              <h6 class=" text-xl text-third_font_co font-bold tracking-tight p-2 pl-8 pb-0 ">Flexible Learning Schedule</h6>
+            <div class="block mt-6">
+              <h6 class=" text-xl text-third_font_co font-semibold tracking-tight pl-8 pb-0 ">Flexible Learning Schedule</h6>
             </div>
             <div class="block p-2">
-              <p class="mb-3 p-0 pl-8 text-gray-500  leading-3 tracking-tight w-100 h-20 leading-6">Fit your coursework around your existing commitments and obligations.</p>
+              <p class="mb-3 p-0 pl-6 text-gray-500  leading-3 tracking-tight w-100 h-20 leading-6">Fit your coursework around your existing commitments and obligations.</p>
             </div>
             <div class="block p-2">
               <div class="">
