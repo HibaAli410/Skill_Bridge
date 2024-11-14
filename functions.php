@@ -29,38 +29,46 @@ function menu_li_classes ( $classes, $item, $args, $depth ){
 		return $classes;
 		}
 add_filter ( 'nav_menu_css_class', 'menu_li_classes', 10, 4 );
-function dynamicPostUrlButton( $addToUrl = []) {
-    $dynButton = '<a class="button" href="'.get_permalink().$addToUrl['dynb_link'].'">'.$addToUrl['dynb_text'].'</a>';
-    return $dynButton;
-}
-
-add_shortcode('dynamic_post_url_button', 'dynamicPostUrlButton');
+add_action('after_setup_theme','post_func');
+//add_theme_support( 'post-thumbnails' );
 
 
- /*function custom_button()
 
-		{
-		echo " get_submit_button( $text, $type, $name, $wrap, $other_attributes ) ";
-		}
-
-add_action( 'after_setup_theme', 'custom_button' ); 
-   function custom_button( $atts, $content = null ) {
-   
-    // shortcode attributes
-    extract( shortcode_atts( array(
-        'url'    => '',
-        'title'  => '',
-        'target' => '',
-        'text'   => '',
-    ), $atts ) );
-
-}*/
-//add_shortcode( 'custombutton', 'custom_button' ); 
-/*function custom_button() {
-   
-	echo "<button></button>";
  
+function post_func(){
+	add_theme_support('post-thumbnails');
+	register_post_type("course", [
+        "labels" => [
+            "name" => __("Our Courses", "skill bridge"),
+            "singular_name" => __("Our Course", "skill bridge"),
+        ],
+        "supports" => ["title", "editor", "author", "thumbnail", "excerpt"],
+        "public" => true,
+        "has_archive" => true,
+    ]);
+	register_post_type("aboutus", [
+        "labels" => [
+            "name" => __("About Us", "skillbridge"),
+            "singular_name" => __("About Us", "skill bridge"),
+        ],
+        "supports" => ["title", "editor", "author", "thumbnail", "excerpt"],
+        "public" => true,
+        "has_archive" => true,
+    ]);register_post_type("pricing", [
+        "labels" => [
+            "name" => __("Pricing", "skillbridge"),
+            "singular_name" => __("Pricing", "skill bridge"),
+        ],
+        "supports" => ["title", "editor", "author", "thumbnail", "excerpt"],
+        "public" => true,
+        "has_archive" => true,
+    ]);
 }
-add_shortcode( 'custombutton', 'custom_button' );*/
+
+add_action('init', 'post_func');
+
+
+
+
 
 ?>

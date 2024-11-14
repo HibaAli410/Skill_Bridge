@@ -1,0 +1,2 @@
+custom post id
+registration
