@@ -1,2 +1,0 @@
-custom post id
-registration

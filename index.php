@@ -1,997 +1,669 @@
-<!DOCTYPE html>
-<html>
+<?php get_header(); ?>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Skill Bridge</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=north_east" />
-    <script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                colors: {
-                    clifford: '#da373d',
-                    primary: '#FF9500',
-                    wit_gray_95: '#f1f1f3',
-                    txt_color: '#ffffff',
-                    secondary: '#262626',
-                    home: 'white',
-                    medwhite: '#FCFCFD',
-                    back_color_home: '#f7f7f8',
-                    black_20: '#333333',
-                    carbon_30: '#59595A',
-                    black_30: '$4C4C4D',
-                }
-            }
-        }
-    }
-    </script>
-
-</head>
-
-<body class="bg-back_color_home">
-    <div
-        class="px-4 py-3 flex flex-wrap items-center justify-center space-between bg-primary rounded-lg items-center mx-5 mt-4 text-gray-500 text-white align-center">
-        Free Courses 🌟 Sale Ends Soon, Get It Now
+<div id="defaultTabContent" class="text-center py-8 mt-12">
+    <div class="flex inline-flex bg-home rounded-lg">
+        <div class="p-3 leading-normal h-auto max-w-full mt-5">
+            <img class=" object-cover" src="<?php echo get_template_directory_uri(); ?>/images/Icon_container.png">
+        </div>
+        <div class="flex justify-center text-4xl p-3 leading-normal  ">
+            <span class="font-bold text-secondary dark:text-white text-5xl sm:3xl leading-loose"><span
+                    class="text-primary">Unlock</span> Your Creative Potential </span>
+        </div>
     </div>
-    <nav class="sm:px-4 py-3 justify-items-center bg-transparent border-gray-200 dark:bg-gray-900 sm:w-full">
-        <div class="container flex flex-wrap items-center mx-auto">
-            <a href="<?php site_url();  ?>" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <?php  the_custom_logo(); ?>
-                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
-            </a>
-            <button data-collapse-toggle="navbar-default" type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                aria-controls="navbar-default" aria-expanded="false">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                    viewBox="0 0 17 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M1 1h15M1 7h15M1 13h15" />
-                </svg>
-            </button>
-            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <?php $menu_items = wp_get_nav_menu_items("header menu"); ?>
-                <ul
-                    class="font-medium flex flex-col p-4 m-4 md:p-0 mt-4 align-center rounded-lg md:flex-row md:space-x-8 md:dark:bg-gray-900 dark:border-gray-700">
-                    <?php $homepage = site_url(); ?>
-                    <?php foreach ($menu_items as $menu_item) { ?>
-                    <?php if ($menu_item->url == $homepage) { ?>
-                    <li class='bg-wit_gray_95 px-8 py-3 rounded-lg '>
-                        <?php } else { ?>
-                    <li class='px-5 py-3 rounded-lg'>
-                        <?php } ?>
-                        <a href="<?php echo $menu_item->url; ?>"
-                            class='block w-100 h-55 py-2 px-1 text-Xl font-bold font-normal text-secondary md:border-0 rounded md:bg-transparent md:p-0 dark:text-white'>
-                            <?php echo $menu_item->title; ?>
-                        </a>
-                    </li>
-                    <?php } ?>
-                </ul>
-            </div>
-            <div class="inline-flex ms-auto rounded-md shadow-sm" role="group">
-                <button type="button"
-                    onclick="window.location.href = '<?php echo get_template_directory_uri(); ?>/rejistration_page.php';"
-                    class="px-8 py-3 text-center font-semibold font-large text-xl text-secondary bg-transparent rounded-lg tracking-wide">Sign
-                    Up</button>
-                <button type="button"
-                    onclick="window.location.href = '<?php echo get_template_directory_uri(); ?>/login_page.php';"
-                    class="px-8 py-3 text-center font-medium font-large text-xl text-txt_color  bg-primary border border-primary rounded-lg ">Login</button>
-            </div>
-    </nav>
-    <!-- end of header -->
-
-
-    <div id="defaultTabContent" class="text-center py-8 mt-12">
-        <div class="flex inline-flex bg-home rounded-lg">
-            <div class="p-3 leading-normal h-auto max-w-full mt-5">
-                <img class=" object-cover" src="<?php echo get_template_directory_uri(); ?>/images/Icon_container.png">
-            </div>
-            <div class="flex justify-center text-4xl p-3 leading-normal  ">
-                <span class="font-bold text-secondary dark:text-white text-5xl sm:3xl leading-loose"><span
-                        class="text-primary">Unlock</span> Your Creative Potential </span>
+    <div id="defaultTabContent" class="text-center">
+        <div class=" p-2 rounded-lg md:p-8 " id="about" role="tabpanel" aria-labelledby="about-tab">
+            <h2 class="mb-3 text-3xl font-bold tracking-wide text-gray-900 font-sans dark:text-white">with Online
+                Design and Development Courses.</h2>
+            <div class="mb-3 text-secondary ">Learn from Industry Experts and Enhance Your Skills.
             </div>
         </div>
-        <div id="defaultTabContent" class="text-center">
-            <div class=" p-2 rounded-lg md:p-8 " id="about" role="tabpanel" aria-labelledby="about-tab">
-                <h2 class="mb-3 text-3xl font-bold tracking-wide text-gray-900 font-sans dark:text-white">with Online
-                    Design and Development Courses.</h2>
-                <div class="mb-3 text-gray-500 dark:text-gray-400">Learn from Industry Experts and Enhance Your Skills.
-                </div>
+        <div class="inline-flex ms-auto rounded-md gap-3 shadow-sm" role="group ">
+            <div type="button" onclick=""
+                class="px-8 py-3 text-center font-medium font-large text-xl text-txt_color  bg-primary border border-primary rounded-lg ">
+                Explore
+                Courses</div>
+            <div type="button"
+                class="px-8 py-3 text-center font-semibold font-large text-xl text-secondary bg-txt_color rounded-lg tracking-wide">
+                View
+                Pricing</div>
+        </div>
+    </div>
+</div>
+
+<div class="flex justify-center py-12  flex-wrap ">
+    <div class="container flex justify-between bg-home h-32 px-4 rounded-lg">
+        <div class=" px-8 pr-5 pt-12   pb-0 bg-transparent dark:border-gray-700 ">
+            <div class="flex pr-12 border-r-2 border-home-500 ">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/zapier.png">
             </div>
-            <div class="inline-flex ms-auto rounded-md shadow-sm" role="group">
-                <button type="button" onclick=""
-                    class="px-8 py-3 text-center font-medium font-large text-xl text-txt_color  bg-primary border border-primary rounded-lg ">Explore
-                    Courses</button>
-                <button type="button"
-                    class="px-8 py-3 text-center font-semibold font-large text-xl text-secondary bg-transparent rounded-lg tracking-wide">View
-                    Pricing</button>
+        </div>
+
+        <div class=" px-8 pr-5 pt-12  pb-0 bg-transparent dark:border-gray-700 ">
+            <div class="flex pr-12 border-r-2 border-home-500 ">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/spotify.png">
+            </div>
+        </div>
+
+        <div class=" px-8 pr-5 pt-12  pb-0 bg-transparent dark:border-gray-700 ">
+            <div class="inline-flex pr-12 border-r-2 border-home-500 ">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/zoom.png">
+            </div>
+        </div>
+
+        <div class=" px-8 pr-5 pt-12  pb-0 bg-transparent dark:border-gray-700 ">
+            <div class="inline-flex pr-12 border-r-2 border-home-500 ">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/amazon.png">
+            </div>
+        </div>
+
+        <div class=" px-8 pr-5 pt-12  pb-0 bg-transparent dark:border-gray-700 ">
+            <div class="inline-flex pr-12 border-r-2 border-home-500 ">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/adobe.png">
+            </div>
+        </div>
+
+        <div class=" px-8 pr-5 pt-12  pb-0 bg-transparent dark:border-gray-700 ">
+            <div class="inline-flex pr-12 border-r-2 border-home-500 ">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/notion.png">
+            </div>
+        </div>
+
+        <div class=" px-8 pr-5 pt-12  pb-0 bg-transparent dark:border-gray-700 ">
+            <div class="inline-flex pr-12 border-r-2 border-home-500 ">
+                <img src="<?php echo get_template_directory_uri(); ?>/images/netflix.png">
             </div>
         </div>
     </div>
+</div>
+</div>
 
-    <div class="flex justify-center py-4  flex-wrap ">
-        <div class="container flex justify-between bg-home h-32 px-4 rounded-lg">
-            <div class=" px-8 pr-5 pt-12   pb-0 bg-transparent dark:border-gray-700 ">
-                <div class="flex pr-12 border-r-2 border-home-500 ">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/zapier.png">
-                </div>
-            </div>
 
-            <div class=" px-8 pr-5 pt-12  pb-0 bg-transparent dark:border-gray-700 ">
-                <div class="flex pr-12 border-r-2 border-home-500 ">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/spotify.png">
-                </div>
-            </div>
+<div class="flex justify-center py-4  flex-wrap ">
+    <div class="container inline-flex  h-50 px-4 rounded-lg">
+        <video class="h-large w-full rounded-lg" controls>
+            <source src="<?php echo get_template_directory_uri();?>/images/container.svg" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
 
-            <div class=" px-8 pr-5 pt-12  pb-0 bg-transparent dark:border-gray-700 ">
-                <div class="inline-flex pr-12 border-r-2 border-home-500 ">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/zoom.png">
-                </div>
-            </div>
-
-            <div class=" px-8 pr-5 pt-12  pb-0 bg-transparent dark:border-gray-700 ">
-                <div class="inline-flex pr-12 border-r-2 border-home-500 ">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/amazon.png">
-                </div>
-            </div>
-
-            <div class=" px-8 pr-5 pt-12  pb-0 bg-transparent dark:border-gray-700 ">
-                <div class="inline-flex pr-12 border-r-2 border-home-500 ">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/adobe.png">
-                </div>
-            </div>
-
-            <div class=" px-8 pr-5 pt-12  pb-0 bg-transparent dark:border-gray-700 ">
-                <div class="inline-flex pr-12 border-r-2 border-home-500 ">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/notion.png">
-                </div>
-            </div>
-
-            <div class=" px-8 pr-5 pt-12  pb-0 bg-transparent dark:border-gray-700 ">
-                <div class="inline-flex pr-12 border-r-2 border-home-500 ">
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/netflix.png">
-                </div>
-            </div>
+<div class="flex justify-center py-4  flex-wrap ">
+    <div class="container inline-flex  h-50 px-4 rounded-lg pt-8">
+        <div class="rounded-lg  " id="about" role="tabpanel" aria-labelledby="about-tab">
+            <h2 class="mb-3 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">Benefits</h2>
+            <p class="text-gray-500 text-base text-carbon_30 tracking-loose font-lg w-auto h-20 leading-7 w-50 m-2">
+                Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu
+                sit dignissim lorem nibh et.Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
+        </div>
+        <div class="flex inlne-flex pt-12 pl-20 pr-0 p-4 ">
+            <button type="button" class="bg-home text-secondary font-medium rounded-lg text-sm w-24 min-h-0 ">Views
+                All</button>
         </div>
     </div>
-    </div>
+</div>
+<div class="flex justify-center py-4  flex-wrap ">
+    <div class="container justify-center p-4  h-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-3  gap-4">
+            <?php   $benefits = array('post_type' => 'benefits','numberposts'=>-1);
+                        $course_benefits = get_posts($benefits);
+                        
+                        $i = 0;
+                        $zero = 0;
+                        foreach( $course_benefits as $post){ 
+                            $i++;
+                            ?>
+            <div class="flex">
+                <div class="rounded-lg bg-txt_color" id="about" role="tabpanel" aria-labelledby="about-tab">
+                    <div class="block p-2  text-right">
+                        <h2
+                            class="mb-3 pt-4 pr-8 text-6xl font-bold tracking-tight font-bold  text-secondary dark:text-white">
+                            <?php
+                                if($i >= 10) {echo $i;} else {echo $zero.$i;} 
+                                ?>
+                        </h2>
+                    </div>
+                    <div class="block mt-6">
+                        <h6 class=" text-xl text-black_20 font-semibold tracking-tight pl-8 pb-0 ">
+                            <?php echo $post->post_title; ?></h6>
+                    </div>
+                    <div class="block p-2 p-0 pl-8 text-black_30 font-normal leading-7 tracking-tight w-100 h-20">
+
+                        <?php echo $post->post_content; ?>
+                    </div>
+                    <div class="block p-2">
+                        <div class="text-right  mb-5">
+                            <button type="button"
+                                class=" mr-4 text-primary justify-right  bg-medwhite border-2 border-wit_gray_95  font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 ">
+
+                                <i class="material-symbols-outlined font-xl ">north_east</i>
+
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
 
 
-    <div class="flex justify-center py-4  flex-wrap ">
-        <div class="container inline-flex  h-50 px-4 rounded-lg">
-            <video class="h-large w-full rounded-lg" controls>
-                <source src="https://docs.material-tailwind.com/demo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
         </div>
     </div>
+</div>
 
-    <div class="flex justify-center py-4  flex-wrap ">
-        <div class="container inline-flex  h-50 px-4 rounded-lg pt-8">
+
+<!-- end of benifits section  -->
+<div class="flex justify-center flex-wrap ">
+    <div class="container inline-flex  h-50 px-4 rounded-lg ">
+        <div class="flex">
             <div class="rounded-lg  " id="about" role="tabpanel" aria-labelledby="about-tab">
-                <h2 class="mb-3 text-5xl font-bold tracking-tight text-gray-900 dark:text-white">Benefits</h2>
-                <p class="text-gray-500 text-base text-carbon_30 tracking-loose font-lg w-auto h-20 leading-7 w-50 m-2">
-                    Lorem ipsum dolor sit amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et. Cras eu
-                    sit dignissim lorem nibh et.Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
+                <div class="container pl-4 ">
+                    <h2 class="mb-3 text-5xl font-semibold tracking-tight text-gray-900 dark:text-white">Our Courses
+                    </h2>
+                </div>
+                <div class="flex pl-4">
+                    <p class="block text-carbon_30 font-normal leading-7 tracking-tight h-20 ">Lorem ipsum dolor
+                        sit amet consectetur.
+                        Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et.Ac cum
+                        eget habitasse in velit fringilla feugiat senectus in.</p>
+                </div>
             </div>
-            <div class="flex inlne-flex pt-12 pl-20 pr-0 p-4 ">
-                <button type="button" class="bg-home text-secondary font-medium rounded-lg text-sm w-24 min-h-0 ">Views
-                    All</button>
+            <div class="flex rounded-lg  ml-44  md:flex-row md:max-w-xl" id="about" role="tabpanel"
+                aria-labelledby="about-tab">
+
+                <div class="flex">
+                    <div class="flex inline-flex pt-8 pl-12 text-center ">
+                        <span
+                            class="bg-home text-secondary font-medium rounded-lg text-sm w-32 h-12 pt-3 align-text-bottom">
+                            <a href="<?php echo //get_post_type_archive_link( 'courses' );
+                                    get_post_type_archive_link('courses'); ?>">
+                                 Views
+                                All</a></span>
+                    </div>
+                </div>
             </div>
+
+
         </div>
     </div>
-    <div class="flex justify-center py-4  flex-wrap ">
-        <div class="container justify-center p-4  h-auto w-full">
-            <div class="grid grid-rows-2  grid-flow-col gap-2">
-                <div class="grid grid-cols-1 lg:grid-cols-3  gap-4">
-                    <div class="flex">
-                        <div class="rounded-lg bg-txt_color" id="about" role="tabpanel" aria-labelledby="about-tab">
-                            <div class="block p-2  text-right">
-                                <h2
-                                    class="mb-3 pt-4 pr-8 text-6xl font-bold tracking-tight font-bold  text-secondary dark:text-white">
-                                    01</h2>
-                            </div>
-                            <div class="block mt-6">
-                                <h6 class=" text-xl text-black_20 font-semibold tracking-tight pl-8 pb-0 ">Flexible
-                                    Learning Schedule</h6>
-                            </div>
-                            <div class="block p-2">
-                                <p class="mb-3 p-0 pl-6 text-black_30 font-normal leading-7 tracking-tight w-100 h-20 ">
-                                    Fit your coursework around your existing commitments and obligations.</p>
-                            </div>
-                            <div class="block p-2">
-                                <div class="text-right  mb-5">
-                                    <button type="button"
-                                        class=" mr-4  text-white justify-right bg-wit_gray_95  font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 ">
-                                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                            fill="none" viewBox="0 0 14 10">
-                                            <path stroke="orange" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                        </svg>
-                                        <span class="sr-only">Icon description</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+</div>
+<div>
+   </div>
 
-                    <div class="flex">
-                        <div class="rounded-lg bg-home" id="about" role="tabpanel" aria-labelledby="about-tab">
-                            <div class="block p-2 text-right">
-                                <h2
-                                    class="mb-3 pt-4 pr-8 text-6xl font-bold tracking-tight font-bold  text-secondary dark:text-white">
-                                    02</h2>
-                            </div>
-                            <div class="block mt-6">
-                                <h6 class=" text-xl text-black_20 font-semibold tracking-tight pl-8 pb-0">Expert
-                                    Instruction</h6>
-                            </div>
-                            <div class="block p-2">
-                                <p class="mb-3 p-0 pl-6 text-black_30 font-normal leading-7 tracking-tight w-100 h-20">
-                                    Learn from industry experts who have hands-on experience in design and development.
-                                </p>
-                            </div>
-                            <div class="block p-2 ">
-                                <div class="text-right mb-5">
-                                    <button type="button"
-                                        class=" mr-4  text-white justify-right bg-wit_gray_95 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 ">
-                                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                            fill="none" viewBox="0 0 14 10">
-                                            <path stroke="orange" stroke-linecap="round" stroke-linejoin="round"
-                                                stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                        </svg>
-                                        <span class="sr-only">Icon description</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex">
-                            <div class="rounded-lg bg-home" id="about" role="tabpanel" aria-labelledby="about-tab">
-                                <div class="block p-2 text-right">
-                                    <h2
-                                        class="mb-3 pt-4 pr-8 text-6xl font-bold tracking-tight font-bold  text-secondary dark:text-white">
-                                        03</h2>
-                                </div>
-                                <div class="block mt-6">
-                                    <h6 class=" text-xl text-black_20 font-semibold tracking-tight pl-8 pb-0">
-                                        Diverse Course Offerings</h6>
-                                </div>
-                                <div class="block p-2">
-                                    <p
-                                        class="mb-3 p-0 pl-6 text-black_30 font-normal leading-7 tracking-tight w-100 h-20">
-                                        Explore a wide range of design and development courses covering various topics.
-                                    </p>
-                                </div>
-                                <div class="block p-2">
-                                    <div class="text-right mb-5">
-                                        <button type="button"
-                                            class=" mr-4  text-white justify-right bg-wit_gray_95  font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 ">
+<div class="flex justify-center p-12  flex-wrap ">
+    <div class="container justify-center h-auto w-full">
 
-                                            <i class="material-symbols-outlined font-xl ">north_east</i>
-
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-3  gap-4">
-                    <div>
-                        <div class="flex">
-                            <div class="rounded-lg bg-home" id="about" role="tabpanel" aria-labelledby="about-tab">
-                                <div class="block p-2 text-right">
-                                    <h2
-                                        class="mb-3 pt-4 pr-8 text-6xl font-bold tracking-tight font-bold  text-secondary dark:text-white">
-                                        04</h2>
-                                </div>
-                                <div class="block mt-6">
-                                    <h6 class=" text-xl text-black_20 font-semibold tracking-tight pl-8 pb-0">
-                                        Updated Curriculum</h6>
-                                </div>
-                                <div class="block p-2">
-                                    <p
-                                        class="mb-3 p-0 pl-6 text-black_30 font-normal leading-7 tracking-tight w-100 h-20">
-                                        Access courses with up-to-date content reflecting the latest trends and industry
-                                        practices..</p>
-                                </div>
-                                <div class="block p-2">
-                                    <div class="text-right mb-5">
-                                        <button type="button"
-                                            class=" mr-4  text-white justify-right bg-wit_gray_95 font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 ">
-                                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="none" viewBox="0 0 14 10">
-                                                <path stroke="orange" stroke-linecap="round" stroke-linejoin="round"
-                                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                            </svg>
-                                            <span class="sr-only">Icon description</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex">
-                            <div class="rounded-lg bg-home" id="about" role="tabpanel" aria-labelledby="about-tab">
-                                <div class="block p-2 text-right">
-                                    <h2
-                                        class="mb-3 pt-4 pr-8 text-6xl font-bold tracking-tight font-bold  text-secondary dark:text-white">
-                                        05</h2>
-                                </div>
-                                <div class="block mt-6 ">
-                                    <h6 class=" text-xl text-black_20 font-semibold tracking-tight pl-8 pb-0">
-                                        Practical Projects and Assignments</h6>
-                                </div>
-                                <div class="block p-2">
-                                    <p
-                                        class="mb-3 p-0 pl-6 text-black_30 font-normal leading-7 tracking-tight w-100 h-20">
-                                        Develop a portfolio showcasing your skills and abilities to potential employers.
-                                    </p>
-                                </div>
-                                <div class="block p-2">
-                                    <div class="text-right mb-5">
-                                        <button type="button"
-                                            class=" mr-4  text-white justify-right bg-wit_gray_95  font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 ">
-                                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="none" viewBox="0 0 14 10">
-                                                <path stroke="orange" stroke-linecap="round" stroke-linejoin="round"
-                                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                            </svg>
-                                            <span class="sr-only">Icon description</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="flex">
-                            <div class="rounded-lg bg-home" id="about" role="tabpanel" aria-labelledby="about-tab">
-                                <div class="block p-2 text-right">
-                                    <h2
-                                        class="mb-3 pt-4 pr-8 text-6xl font-bold tracking-tight font-bold  text-secondary dark:text-white">
-                                        06</h2>
-                                </div>
-                                <div class="block mt-6 ">
-                                    <h6 class=" text-xl text-black_20 font-semibold tracking-tight pl-8 pb-0">
-                                        Interactive Learning Environment</h6>
-                                </div>
-                                <div class="block p-2">
-                                    <p
-                                        class="mb-3 p-0 pl-6 text-black_30 font-normal leading-7 tracking-tight w-100 h-20">
-                                        Collaborate with fellow learners, exchanging ideas and feedback to enhance your
-                                        understanding.</p>
-                                </div>
-                                <div class="block p-2">
-                                    <div class="text-right mb-5 ">
-                                        <button type="button"
-                                            class=" mr-4 text-white justify-right bg-wit_gray_95  font-medium rounded-lg text-sm p-2.5 text-center inline-flex items-center me-2 ">
-                                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                                fill="none" viewBox="0 0 14 10">
-                                                <path stroke="orange" stroke-linecap="round" stroke-linejoin="round"
-                                                    stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                            </svg>
-                                            <span class="sr-only">Icon description</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- end of benifits section  -->
-    <div class="flex justify-center flex-wrap ">
-        <div class="container inline-flex  h-50 px-4 rounded-lg ">
-            <div class="flex">
-                <div class="rounded-lg  " id="about" role="tabpanel" aria-labelledby="about-tab">
-                    <div class="container pl-4 ">
-                        <h2 class="mb-3 text-5xl font-semibold tracking-tight text-gray-900 dark:text-white">Our Courses
-                        </h2>
-                    </div>
-                    <div class="flex pl-4">
-                        <p class="block text-carbon_30 font-normal leading-7 tracking-tight h-20 ">Lorem ipsum dolor
-                            sit amet consectetur.
-                            Tempus tincidunt etiam eget elit id imperdiet et. Cras eu sit dignissim lorem nibh et.Ac cum
-                            eget habitasse in velit fringilla feugiat senectus in.</p>
-                    </div>
-                </div>
-                <div class="flex rounded-lg  ml-44  md:flex-row md:max-w-xl" id="about" role="tabpanel"
-                    aria-labelledby="about-tab">
-                    <div class="flex"><button type="button"
-                            class="bg-txt_color mt-16 text-secondary font-medium rounded-lg text-sm w-24 h-12 ">Views
-                            All</button>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-    </div>
-
-
-    <?php 
-        $course = array('post_type' => 'course');         
-     $my_posts = get_posts($course);?>
-    <div class="flex justify-center">
-        <div class="container">
-            <div class="flex flex-row gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2  gap-4">
+            <?php   
+                    $course_params = array('post_type' => 'courses', 'numberposts' => -1);
+                    $courses = get_posts($course_params);
+                    foreach($courses as $course) { 
+                ?>
+            <div class=" md:w-ful bg-txt_color pb-4 pt-8 px-20 rounded-lg ">
+                <?php   
+                                $featured_img_url = get_the_post_thumbnail_url($course->ID);
+                            ?>
                 <div>
-                    <div class="lg:w-2/2 md:w-ful bg-txt_color pb-4 pt-8 px-20 rounded-lg ">
-                        <div>
-                            <img class="rounded-t-lg"
-                                src="<?php echo get_template_directory_uri(); ?>/images/web_de_fun.png" alt="" />
-                        </div>
-                        <div class="flex mt-4 gap-4">
-                            <div
-                                class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                <a href="#">Read more
-                                </a>
-                            </div>
-                            <div
-                                class="inline-flex  text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                <a href="#">Read more
-                                </a>
-                            </div>
-                            <div
-                                class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                <a href="#">Read more
-                                </a>
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h5
-                                class="mb-2 text-xl leading-8 font-sans font-bold tracking-wide text-secondary dark:text-white">
-                                Web Design Fundamentals</h5>
-                            <p class="mb-3 font-normal text-black_30 dark:text-gray-400">Learn the fundamentals of web
-                                design, including HTML, CSS, and responsive design principles. Develop the skills to
-                                create
-                                visually appealing and user-friendly websites.</p>
-                        </div>
-
-                        <div
-                            class="inline-flex w-full justify-center px-6 py-4 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Get it Now
-                            </a>
-                        </div>
-                    </div>
+                    <img class="rounded-t-lg" src="<?php echo $featured_img_url ;?>" alt="" />
                 </div>
-                <div>
-                    <div class="lg:w-2/2 md:w-ful bg-txt_color pb-4 pt-8 px-20 rounded-lg ">
-                        <div>
-                            <img class="rounded-t-lg"
-                                src="<?php echo get_template_directory_uri(); ?>/images/web_de_fun.png" alt="" />
-                        </div>
-                        <div class="flex mt-4 gap-4">
-                            <div
-                                class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                <a href="#">Read more
-                                </a>
-                            </div>
-                            <div
-                                class="inline-flex  text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                <a href="#">Read more
-                                </a>
-                            </div>
-                            <div
-                                class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                <a href="#">Read more
-                                </a>
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h5
-                                class="mb-2 text-xl leading-8 font-sans font-bold tracking-wide text-secondary dark:text-white">
-                                Web Design Fundamentals</h5>
-                            <p class="mb-3 font-normal text-black_30 dark:text-gray-400">Learn the fundamentals of web
-                                design, including HTML, CSS, and responsive design principles. Develop the skills to
-                                create
-                                visually appealing and user-friendly websites.</p>
-                        </div>
+                <div class="flex mt-4 gap-4 ">
+                    <?php 
+                                    
+                                    $course_terms = get_the_terms($course->ID, 'course-tags');
+                                    if($course_terms) {
+                                        foreach($course_terms as $course_term) {
+                                ?>
+                    <div
+                        class="inline-flex text-center px-3 py-2 text-sm font-normal text-center text-carbon_30 bg-txt_color border-2 border-wit_gray_95 rounded-lg ">
+                        <a href="#">
+                            <?php echo $course_term->name; ?>
+                        </a>
+                    </div>
+                    <?php
+                                       }
+                                }
+                                
+                                $course_terms = get_the_terms($course->ID, 'course-instructor');
+                                if($course_terms) { ?>
+                    <div
+                        class="inline-flex text-center font-bold px-3 py-2 font-semibold text-lg text-secondary bg-txt_color rounded-lg ml-44">
+                        <?php
+                                           foreach($course_terms as $course_term) {}
+                                           echo  "By ".$course_term->name;        
 
-                        <div
-                            class="inline-flex w-full justify-center px-6 py-4 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Get it Now
-                            </a>
+                                                } ?></div>
+
+
+
+                </div>
+                <div class="p-5">
+                    <h5 class="mb-2 text-xl leading-8 font-sans font-bold tracking-wide text-secondary">
+
+                        <?php echo $course->post_title; ?>
+                    </h5>
+                    <p class="mb-3 font-normal text-black_30 dark:text-gray-400">
+                        <?php echo $course->post_content; ?>.</p>
+                </div>
+
+                <div
+                    class="inline-flex w-full justify-center px-6 py-4 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg">
+                    <a href="<?php the_permalink($course->ID); ?>">Get it Now
+                    </a>
+                </div>
+
+            </div>
+
+            <?php } ?>
+        </div>
+
+
+
+
+    </div>
+</div>
+
+
+
+<!-- end of the cources -->
+<div class="flex justify-center flex-wrap m-12">
+    <div class="container inline-flex  px-4 rounded-lg ">
+        <div class="flex">
+            <div class="rounded-lg  " id="about" role="tabpanel" aria-labelledby="about-tab">
+                <div class="container ">
+                    <h2 class="mb-3 text-5xl font-semibold tracking-tight text-gray-900 dark:text-white">Our
+                        Testimonials
+                    </h2>
+                </div>
+                <div class="flex">
+                    <p class="block pt-6 text-base text-carbon_30 leading-7 tracking-wide  ">Lorem ipsum dolor
+                        sit
+                        amet consectetur. Tempus tincidunt etiam enormalget elit id imperdiet et. Cras eu sit
+                        dignissim
+                        lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
+                </div>
+            </div>
+            <div class="flex rounded-lg  ml-44  md:flex-row md:max-w-xl" id="about" role="tabpanel"
+                aria-labelledby="about-tab">
+                <div class="flex"><button type="button"
+                        class="bg-txt_color lg:mt-16 text-secondary font-medium rounded-lg text-sm md:w-24 w-24 h-14">Views
+                        All</button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<div class="flex justify-center p-12  flex-wrap ">
+    <div class="container justify-center h-auto w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2  gap-4">
+            <?php 
+                
+               $testimonial_params = array('post_type' => 'testimonial');
+                $testimonial_posts = get_posts($testimonial_params);
+                 foreach($testimonial_posts  as $testimonial){ ?>
+                        <div class="flex bg-home pl-8 pt-8 pr-8  ">
+                            <div class="block m-6 ">
+                                <div class="text-lg font-sans font-normal text-black_30 py-8">
+                                    <?php echo $testimonial->post_content;  ?>
+                                </div>
+                                <div class="container bg-medwhite p-8 pt-8">
+                                    <div class="flex lg:pl-10 sm:pl-8  justify-between">
+                                        <?php 
+                                                            $featured_img_url = get_the_post_thumbnail_url($testimonial->ID);
+                                                            ?>
+                                        <div class="flex w-50 h-14">
+                                            <img class="w-10 h-10 rounded" src="<?php echo  $featured_img_url ;?>"
+                                                alt="Default avatar">
+                                            <div class="pt-2 pl-4 text-lg text_black_20">
+                                                <span><?php echo $testimonial->post_title;  ?></span>
+                                            </div>
+                                        </div>
+                                        <div class="shrink w-20 h-14  "></div>
+                                        <div class="flex-none flex-row-reverse w-40 h-14 pt-2">
+                                            <span
+                                                class="font-bold py-4 px-4  rounded text-center text-sm font-medium text-center text-secondary bg-back_color_home rounded-lg ">Read
+                                                Full Story</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+            <?php } ?>
+        </div>
+    </div>
+</div>
+<!-- end of testimonials  -->
+<div class="flex justify-center  m-12">
+    <div class="container inline-flex  px-4 rounded-lg ">
+        <div class="flex">
+            <div class="rounded-lg  " id="about" role="tabpanel" aria-labelledby="about-tab">
+                <div class="container ">
+                    <h2 class="mb-3 text-5xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                        Our Pricing
+                    </h2>
+                </div>
+                <div class="flex">
+                    <p class="block pt-6 text-base text-carbon_30 leading-7 tracking-wide  ">Lorem ipsum dolor sit
+                        amet consectetur. Tempus tincidunt etiam eget elit id imperdiet et.Cras eu sit dignissim
+                        lorem nibh et. Ac cum eget habitasse in velit fringilla feugiatsenectus in.</p>
+                </div>
+            </div>
+            <div class="flex rounded-lg  ml-40 md:block  md:flex-row md:max-w-xl" id="about" role="tabpanel"
+                aria-labelledby="about-tab">
+                <div class="flex p-2 pl-0">
+                    <div class="flex bg-txt_color font-medium rounded-lg text-sm md:w-auto p-2">
+                        <button type="button"
+                            class="shrink bg-primary text-txt_color font-medium rounded-lg text-sm md:w-32 w-32 h-14 p-4">Monthly</button>
+                        <button type="button"
+                            class="shrink bg-txt_color  text-secondary font-medium rounded-lg text-sm md:w-32 w-32 h-14 p-4">yearly</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-
-
-
-    <!-- <div class="flex justify-center">
-        <div class="container ">
-            <div class="flex space-x-4">
-                <div class="lg:max-w-1/2 sm:w-full bg-txt_color pb-4 pt-8 px-20 rounded-lg ">
-                    <div>
-                        <img class="rounded-t-lg"
-                            src="<?php echo get_template_directory_uri(); ?>/images/web_de_fun.png" alt="" />
-                    </div>
-                    <div class="flex mt-4 gap-4">
-                        <div
-                            class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                        <div
-                            class="inline-flex  text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                        <div
-                            class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h5
-                            class="mb-2 text-xl leading-8 font-sans font-bold tracking-wide text-secondary dark:text-white">
-                            Web Design Fundamentals</h5>
-                        <p class="mb-3 font-normal text-black_30 dark:text-gray-400">Learn the fundamentals of web
-                            design, including HTML, CSS, and responsive design principles. Develop the skills to create
-                            visually appealing and user-friendly websites.</p>
-                    </div>
-
-                    <div
-                        class="inline-flex w-full justify-center px-6 py-4 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        <a href="#">Get it Now
-                        </a>
-                    </div>
+<div class="flex justify-center  m-12">
+    <div class="container inline-flex  px-4 rounded-lg ">
+        <div class="grid grid-cols-1 md:w-full lg:grid-cols-2  gap-4 bg-txt_color p-16">
+            <div class=" md:w-ful bg-medwhite pb-4 pt-8 px-10 rounded-lg ">
+                <div class="bg-peach p-3 rounded-lg text-center text-secondary text-lg font-semibold ">
+                    Free Plan
                 </div>
 
-                <div class=" lg:max-w-1/2 sm:w-full bg-txt_color pb-4 pt-8 px-20 rounded-lg ">
-                    <div>
-                        <img class="rounded-t-lg" src="<?php echo get_template_directory_uri(); ?>/images/ui_ux.png"
-                            alt="" />
-                    </div>
-                    <div class="flex mt-4 gap-4">
-                        <div
-                            class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                        <div
-                            class="inline-flex  text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                        <div
-                            class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h5
-                            class="mb-2 text-xl font-bold font-sans leading-8 tracking-wide text-secondary dark:text-white">
-                            UI/UX Design</h5>
+                <div class="flex mt-4 justify-center ">
+                    <span class="text-secondary text-7xl font-semibold font-sans ">$0</span>
+                    <h6 class="pt-10 pr-0 pl-o pb-0">/month</h6>
+                </div>
 
-                        <p class="mb-3 font-normal text-black_30 dark:text-gray-400">Master the art of creating
-                            intuitive user interfaces (UI) and enhancing user experiences (UX). Learn design principles,
-                            wireframing, prototyping, and usability testing techniques.</p>
-                    </div>
-
+                <div class="p-5 mt-8 text-center  bg-txt_color rounded-lg ">
+                    <span
+                        class="mb-2 text-base leading-8 font-sans font-medium tracking-wide text-secondary dark:text-white">Available
+                        Features</span>
                     <div
-                        class="inline-flex w-full text-center contant-center px-6 py-4 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        <a href="#">Read more
-                        </a>
+                        class="flex m-4 bg-white pl-12 border-2 border-wit_gray_95 rounded text-normal leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">Access to selected free courses.</span>
                     </div>
+                    <div
+                        class="flex m-4 bg-white pl-12 text-normal border-2 border-wit_gray_95 rounded leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">Limited course materials and resources.</span>
+                    </div>
+                    <div
+                        class="flex m-4 bg-white pl-12 text-normal border-2 border-wit_gray_95 rounded leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">Basic community support.</span>
+                    </div>
+                    <div
+                        class="flex m-4 bg-white pl-12 text-normal border-2 border-wit_gray_95 rounded leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">No certification upon completion..</span>
+                    </div>
+                    <div
+                        class="flex m-4 bg-white pl-12 text-normal border-2 border-wit_gray_95 rounded leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">Ad-supported platform.</span>
+                    </div>
+                    <div
+                        class="flex m-4 bg-white pl-12 border-2 border-wit_gray_95 rounded text-normal leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 border-2 border-wit_gray_95 rounded justify-center mt-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path
+                                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">Access to selected free courses.</span>
+                    </div>
+                    <div
+                        class="flex m-4 bg-white pl-12 border-2 border-wit_gray_95 rounded text-normal leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 border-2 border-wit_gray_95 rounded justify-center mt-1 ">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path
+                                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">Access to selected free courses.</span>
+                    </div>
+
+                </div>
+
+                <div
+                    class="inline-flex w-full justify-center rounded-b-lg rounder-b-ro px-6 py-4 text-sm font-medium text-center text-txt_color bg-primary">
+                    <a href="#">Get it Now</a>
                 </div>
             </div>
-        </div>
-    </div> -->
-    <!-- <div class="flex justify-center">
-        <div class="container ">
-            <div class="flex space-x-4">
-                <div class="mt-4 lg:max-w-1/2 sm:w-full bg-txt_color pb-4 pt-8 px-20 rounded-lg ">
-                    <div>
-                        <img class="rounded-t-lg" src="<?php echo get_template_directory_uri(); ?>/images/mob_app.png"
-                            alt="" />
-                    </div>
-                    <div class="flex mt-4 gap-4">
-                        <div
-                            class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                        <div
-                            class="inline-flex  text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                        <div
-                            class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                    </div>
-                    <div class="mt-4 p-5">
-                        <h5
-                            class="mb-4 text-xl leading-8 font-sans font-bold tracking-wide text-secondary dark:text-white">
-                            Mobile App Development</h5>
-                        <p class="mb-3 font-normal text-black_30 dark:text-gray-400">Dive into the world of mobile app
-                            development. Learn to build native iOS and Android applications using industry-leading
-                            frameworks like Swift and Kotlin..</p>
-                    </div>
+            <div class=" md:w-ful bg-medwhite pb-4 pt-8 px-10 rounded-lg ">
+                <div class="bg-peach p-3 rounded-lg text-center text-secondary text-lg font-semibold ">
+                    Pro Plan
+                </div>
 
+                <div class="flex mt-4 justify-center ">
+                    <span class="text-secondary text-7xl font-semibold font-sans ">$79</span>
+                    <h6 class="pt-10 pr-0 pl-o pb-0">/month</h6>
+                </div>
+
+                <div class="p-5 mt-8 text-center  bg-txt_color rounded-lg ">
+                    <span
+                        class="mb-2 text-base leading-8 font-sans font-medium tracking-wide text-secondary dark:text-white">Available
+                        Features</span>
                     <div
-                        class="inline-flex w-full justify-center px-6 py-4 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        <a href="#">Get it Now
-                        </a>
+                        class="flex m-4 bg-white pl-12 border-2 border-wit_gray_95 rounded text-normal leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">Unlimited access to all courses.</span>
                     </div>
-                </div>
-
-                <div class="mt-4 lg:max-w-1/2 sm:w-full bg-txt_color pb-4 pt-8 px-20 rounded-lg ">
-                    <div>
-                        <img class="rounded-t-lg"
-                            src="<?php echo get_template_directory_uri(); ?>/images/graphic_design.png" alt="" />
-                    </div>
-                    <div class="flex mt-4 gap-4">
-                        <div
-                            class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                        <div
-                            class="inline-flex  text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                        <div
-                            class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h5
-                            class="mb-2 text-xl font-bold font-sans leading-8 tracking-wide text-secondary dark:text-white">
-                            Graphic Design for Beginners</h5>
-
-                        <p class="mb-3 font-normal text-black_30 dark:text-gray-400">Discover the fundamentals of
-                            graphic design, including typography, color theory, layout design, and image manipulation
-                            techniques. Create visually stunning designs for print and digital media.</p>
-                    </div>
-
                     <div
-                        class="inline-flex w-full text-center contant-center px-6 py-4 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        <a href="#">Read more
-                        </a>
+                        class="flex m-4 bg-white pl-12 text-normal border-2 border-wit_gray_95 rounded leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">UnLimited course materials and resources.</span>
                     </div>
-                </div>
-
-
-
-
-            </div>
-        </div>
-    </div> -->
-    <!-- <div class="flex justify-center">
-        <div class="container ">
-            <div class="flex space-x-4">
-                <div class="mt-4 lg:max-w-1/2 sm:w-full bg-txt_color pb-4 pt-8 px-20 rounded-lg ">
-                    <div>
-                        <img class="rounded-t-lg"
-                            src="<?php echo get_template_directory_uri(); ?>/images/f_edevelopment.png" alt="" />
-                    </div>
-                    <div class="flex mt-4 gap-4">
-                        <div
-                            class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                        <div
-                            class="inline-flex  text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                        <div
-                            class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h5
-                            class="mb-4 text-xl leading-8 font-sans font-bold tracking-wide text-secondary dark:text-white">
-                            Front-End Web Development</h5>
-                        <p class="mb-3 font-normal text-black_30 dark:text-gray-400">Become proficient in front-end web
-                            development. Learn HTML, CSS, JavaScript, and popular frameworks like Bootstrap and React.
-                            Build interactive and responsive websites.</p>
-                    </div>
-
                     <div
-                        class="inline-flex w-full text-center px-6 py-4 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        <a href="#">Read more
-                        </a>
+                        class="flex m-4 bg-white pl-12 text-normal border-2 border-wit_gray_95 rounded leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">Priority support from instructors.</span>
                     </div>
-                </div>
-
-                <div class="mt-4 lg:max-w-1/2 sm:w-full bg-txt_color pb-4 pt-8 px-20 rounded-lg ">
-                    <div>
-                        <img class="rounded-t-lg"
-                            src="<?php echo get_template_directory_uri(); ?>/images/advance_java.png" alt="" />
-                    </div>
-                    <div class="flex mt-4 gap-4">
-                        <div
-                            class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                        <div
-                            class="inline-flex  text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                        <div
-                            class="inline-flex text-center px-3 py-2 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                            <a href="#">Read more
-                            </a>
-                        </div>
-                    </div>
-                    <div class="p-5">
-                        <h5
-                            class="mb-2 text-xl font-bold font-sans leading-8 tracking-wide text-secondary dark:text-white">
-                            Advanced JavaScript</h5>
-
-                        <p class="mb-3 font-normal text-black_30 dark:text-gray-400">Take your JavaScript skills to the
-                            next level. Explore advanced concepts like closures, prototypes, asynchronous programming,
-                            and ES6 features. Build complex applications with confidence.</p>
-                    </div>
-
                     <div
-                        class="inline-flex w-full text-center contant-center px-6 py-4 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        <a href="#">Read more
-                        </a>
+                        class="flex m-4 bg-white pl-12 text-normal border-2 border-wit_gray_95 rounded leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">Course completion certificates.</span>
                     </div>
+                    <div
+                        class="flex m-4 bg-white pl-12 text-normal border-2 border-wit_gray_95 rounded leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">Ad-free experience.</span>
+                    </div>
+                    <div
+                        class="flex m-4 bg-white pl-12 border-2 border-wit_gray_95 rounded text-normal leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">Access to exclusive Pro Plan community forums.</span>
+                    </div>
+                    <div
+                        class="flex m-4 bg-white pl-12 border-2 border-wit_gray_95 rounded text-normal leading-8 font-sans text-base tracking-wide text-secondary">
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z" />
+                            </svg>
+                        </button>
+                        <span class="block pl-2">Early access to new courses and updates.</span>
+                    </div>
+
                 </div>
 
-
-
-
-            </div>
-        </div>
-    </div> -->
-    <!-- end of the cources -->
-    <div class="flex justify-center flex-wrap m-12">
-        <div class="container inline-flex  px-4 rounded-lg ">
-            <div class="flex">
-                <div class="rounded-lg  " id="about" role="tabpanel" aria-labelledby="about-tab">
-                    <div class="container ">
-                        <h2 class="mb-3 text-5xl font-semibold tracking-tight text-gray-900 dark:text-white">Our
-                            Testimonials
-                        </h2>
-                    </div>
-                    <div class="flex">
-                        <p class="block pt-6 text-base text-carbon_30 leading-7 tracking-wide  ">Lorem ipsum dolor
-                            sit
-                            amet consectetur. Tempus tincidunt etiam enormalget elit id imperdiet et. Cras eu sit
-                            dignissim
-                            lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
-                    </div>
+                <div
+                    class="inline-flex w-full justify-center rounded-b-lg rounder-b-ro px-6 py-4 text-sm font-medium text-center text-txt_color bg-primary">
+                    <a href="#">Get it Now</a>
                 </div>
-                <div class="flex rounded-lg  ml-44  md:flex-row md:max-w-xl" id="about" role="tabpanel"
-                    aria-labelledby="about-tab">
-                    <div class="flex"><button type="button"
-                            class="bg-txt_color lg:mt-16 text-secondary font-medium rounded-lg text-sm md:w-24 w-24 h-14">Views
-                            All</button>
-                    </div>
-                </div>
-
-
             </div>
         </div>
     </div>
-    <div class="flex justify-center p-12  flex-wrap ">
-        <div class="container justify-center h-auto w-full">
-            <div class="grid grid-rows-2  grid-flow-col gap-4">
-                <div class="grid grid-cols-1 lg:grid-cols-2  gap-4">
-                    <div class="flex bg-home  ">
-                        <div class="block">
-                            <p class="m-6 text-lg font-sans font-normal text-black_30 px-6 ">
-                                The web design course provided a solid foundation for me. The instructors were
-                                knowledgeable
-                                and supportive, and the interactive learning environment was engaging. I highly
-                                recommend
-                                it!
-                            </p>
-                            <div class="container bg-medwhite">
-                                <div class="flex lg:pl-10 sm:pl-8  justify-between ">
-                                    <div class="flex w-50 h-14">
-                                        <img class="w-10 h-10 rounded"
-                                            src="<?php echo get_template_directory_uri();?>/images/sara.png"
-                                            alt="Default avatar">
-                                        <div class="pt-2 pl-4 text-lg text_black_20">
-                                            <span>Sara L</span>
-
-                                        </div>
-                                    </div>
-                                    <div class="shrink w-20 h-14  ">
-
-                                    </div>
-                                    <div class="flex-none flex-row-reverse w-40 h-14 pt-2">
-                                        <span
-                                            class="font-bold py-4 px-4  rounded text-center text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Read
-                                            Full Story</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex bg-home  ">
-                        <div class="block">
-                            <p class="m-6 text-lg font-sans font-normal text-black_30 px-6 ">
-                                The web design course provided a solid foundation for me. The instructors were
-                                knowledgeable
-                                and supportive, and the interactive learning environment was engaging. I highly
-                                recommend
-                                it!
-                            </p>
-                            <div class="container bg-medwhite">
-                                <div class="flex lg:pl-10 sm:pl-8  justify-between">
-                                    <div class="flex w-50 h-14">
-                                        <img class="w-10 h-10 rounded"
-                                            src="<?php echo get_template_directory_uri();?>/images/jason.png"
-                                            alt="Default avatar">
-                                        <div class="pt-2 pl-4 text-lg text_black_20">
-                                            <span>Jason M</span>
-
-                                        </div>
-                                    </div>
-                                    <div class="shrink w-20 h-14  ">
-
-                                    </div>
-                                    <div class="flex-none flex-row-reverse w-40 h-14 pt-2">
-                                        <span
-                                            class="font-bold py-4 px-4  rounded text-center text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Read
-                                            Full Story</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+</div>
+<div class="flex justify-center  m-12">
+    <div class="container inline-flex  px-4 rounded-lg ">
+        <div class="grid grid-cols-1 md:w-full lg:grid-cols-2  gap-4 bg-txt_color p-16">
+            <div class=" md:w-ful bg-medwhite pb-4 pt-8 px-10 rounded-lg ">
+                <div class="flex mt-4 ">
+                    <span class="text-secondary sm:max-w-full text-5xl font-semibold font-sans">Frequently<br> Asked
+                        Questions</span>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 mt-2 gap-4">
-                    <div class="flex bg-home  ">
-                        <div class="block">
-                            <p class="m-6 text-lg font-sans font-normal text-black_30 px-6 ">
-                                The web design course provided a solid foundation for me. The instructors were
-                                knowledgeable
-                                and supportive, and the interactive learning environment was engaging. I highly
-                                recommend
-                                it!
-                            </p>
-                            <div class="container bg-medwhite">
-                                <div class="flex lg:pl-10 sm:pl-8  justify-between">
-                                    <div class="flex w-50 h-14">
-                                        <img class="w-10 h-10 rounded"
-                                            src="<?php echo get_template_directory_uri();?>/images/sara.png"
-                                            alt="Default avatar">
-                                        <div class="pt-2 pl-4 text-lg text_black_20">
-                                            <span>Sara L</span>
+                <div class="block w-80 p-4">Still you have any questions? Contact our Team via
+                    support@skillbridge.com</div>
 
-                                        </div>
-                                    </div>
-                                    <div class="shrink w-20 h-14  ">
 
-                                    </div>
-                                    <div class="flex-none flex-row-reverse w-40 h-14 pt-2">
-                                        <span
-                                            class="font-bold py-4 px-4  rounded text-center text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Read
-                                            Full Story</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex bg-home  ">
-                        <div class="block">
-                            <p class="m-6 text-lg font-sans font-normal text-black_30 px-6 ">
-                                The web design course provided a solid foundation for me. The instructors were
-                                knowledgeable
-                                and supportive, and the interactive learning environment was engaging. I highly
-                                recommend
-                                it!
-                            </p>
-                            <div class="container bg-medwhite">
-                                <div class="flex lg:pl-10 sm:pl-8  justify-between">
-                                    <div class="flex w-50 h-14">
-                                        <img class="w-10 h-10 rounded"
-                                            src="<?php echo get_template_directory_uri();?>/images/jason.png"
-                                            alt="Default avatar">
-                                        <div class="pt-2 pl-4 text-lg text_black_20">
-                                            <span>Jason M</span>
-
-                                        </div>
-                                    </div>
-                                    <div class="shrink w-20 h-14  ">
-
-                                    </div>
-                                    <div class="flex-none flex-row-reverse w-40 h-14 pt-2">
-                                        <span
-                                            class="font-bold py-4 px-4  rounded text-center text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Read
-                                            Full Story</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                <div
+                    class="inline-flex justify-center rounded-lg rounder-b-ro px-6 py-4 text-sm font-medium text-center text-secondary border-2 border-wit_gray_95">
+                    <a href="#">See All FAQ’s</a>
                 </div>
 
             </div>
+            <div class=" md:w-ful bg-medwhite pb-4 pt-8 px-10 rounded-lg ">
+                <div class="p-5 mt-8 text-center  bg-txt_color rounded-lg ">
+                    <div
+                        class="flex m-4 bg-white justify-between p-4 border-2 border-wit_gray_95 rounded font-medium leading-8 font-sans text-base tracking-wide text-secondary">
+                        <span class="block ">Can I enroll in multiple courses at once?</span>
+                        <button class="w-8 h-8 bg-check_color justify-center mt-1 p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                                fill="black_30">
+                                <path
+                                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                            </svg>
+                        </button>
 
-        </div>
-    </div>
+                    </div>
+                    <div
+                        class="flex m-6 bg-white text-normal leading-7 text-left font-sans font-normal tracking-wide text-secondary">
+                        <span class="block"> Absolutely! You can enroll in multiple courses simultaneously and
+                            access them at your convenience.
+                        </span>
+                    </div>
+                    <div
+                        class="flex w-full justify-between rounded-lg px-2 py-4 text-sm font-medium text-center bg-back_color_home">
+                        <a href="#" class="text-black_20">Enrollment Process for Different Courses</a>
+                        <button class="p-1 rounded-full w-6 h-6 bg-txt_color justify-center mt-1 p-1 ">
+                            <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" width="20px" height="20px">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div
+                        class="flex m-4 bg-white justify-between p-4 border-2 border-wit_gray_95 rounded font-medium leading-8 font-sans text-base tracking-wide text-secondary">
+                        <span class="block ">What kind of support can I expect from instructors?</span>
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16"
+                                viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z">
+                                </path>
+                            </svg></button>
 
-    <!-- end of testimonials  -->
-    <div class="flex justify-center flex-wrap m-12">
-        <div class="container inline-flex  px-4 rounded-lg ">
-            <div class="flex">
-                <div class="rounded-lg  " id="about" role="tabpanel" aria-labelledby="about-tab">
-                    <div class="container ">
-                        <h2 class="mb-3 text-5xl font-semibold tracking-tight text-gray-900 dark:text-white">Our
-                            Testimonials
-                        </h2>
                     </div>
-                    <div class="flex">
-                        <p class="block pt-6 text-base text-carbon_30 leading-7 tracking-wide  ">Lorem ipsum dolor
-                            sit
-                            amet consectetur. Tempus tincidunt etiam enormalget elit id imperdiet et. Cras eu sit
-                            dignissim
-                            lorem nibh et. Ac cum eget habitasse in velit fringilla feugiat senectus in.</p>
+                    <div
+                        class="flex m-4 bg-white justify-between p-4 border-2 border-wit_gray_95 rounded font-medium leading-8 font-sans text-base tracking-wide text-secondary">
+                        <span class="block  w-80 ">Are the courses self-paced or do they have specific start and end
+                            dates?</span>
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16"
+                                viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z">
+                                </path>
+                            </svg> </button>
+
                     </div>
+                    <div
+                        class="flex m-4 bg-white justify-between p-4 border-2 border-wit_gray_95 rounded font-medium leading-8 font-sans text-base tracking-wide text-secondary">
+                        <span class="block ">Are there any prerequisites for the courses?</span>
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16"
+                                viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z">
+                                </path>
+                            </svg> </button>
+
+                    </div>
+                    <div
+                        class="flex m-4 bg-white justify-between p-4 border-2 border-wit_gray_95 rounded font-medium leading-8 font-sans text-base tracking-wide text-secondary">
+                        <span class="block ">Can I download the course materials for offline access?</span>
+                        <button class="w-6 h-6 bg-check_color justify-center mt-1 p-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16"
+                                viewBox="0 0 24 24">
+                                <path fill-rule="evenodd"
+                                    d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z">
+                                </path>
+                            </svg>
+                        </button>
+
+                    </div>
+
+
                 </div>
-                <div class="flex rounded-lg   md:flex-row md:max-w-xl" id="about" role="tabpanel"
-                    aria-labelledby="about-tab">
-                    <div class="flex h-auto"><button type="button"
-                            class="bg-txt_color mt-16 text-secondary font-medium rounded-lg text-sm  h-12 ">Views
-                            All</button>
-                    </div>
+
+                <div
+                    class="inline-flex w-full justify-center rounded-b-lg rounder-b-ro px-6 py-4 text-sm font-medium text-center text-txt_color bg-primary">
+                    <a href="#">Get it Now</a>
                 </div>
-
-
             </div>
         </div>
     </div>
-
-
-    // $course = array('post_type' => 'course');
-    // $my_posts = get_posts($course);
-    // foreach($my_posts as $post){
-
-    // echo $post->post_title;
-
-    // }
-    // $args = array( 'post_type' => 'course', 'posts_per_page' => 10 );
-    // $loop = new WP_Query( $args );
-    // while ( $loop->have_posts() ) : $loop->the_post();
-    // the_title();
-    // echo '<div class="entry-content">';
-        // the_content();
-        // echo '</div>';
-    // endwhile;
-
-</body>
-
-</html>
+</div>
+<?php get_footer(); ?>
