@@ -111,22 +111,22 @@ function custom_taxonomy() {
 // }
 //add_shortcode( 'foobar', 'foobar_func' );
 //add_action('init', 'foobar_func');
-function form_shortcode($atts,$content) {
-    $atts = shortcode_atts(array(
-        'id' => '',
-        'class' => '',
-        'action' => '',
-        'method' => 'get'
-    ), $atts, 'form');
+// function form_shortcode($atts,$content) {
+//     $atts = shortcode_atts(array(
+//         'id' => '',
+//         'class' => '',
+//         'action' => '',
+//         'method' => 'get'
+//     ), $atts, 'form');
 
-    $output = '<form id="' . esc_attr($atts['id']) . '" class="' . esc_attr($atts['class']) . '" action="' . esc_url($atts['action']) . '" method="' . esc_attr($atts['method']) . '">';
-    $output .= do_shortcode($content);
-    $output .= '</form>';
+//     $output = '<form id="' . esc_attr($atts['id']) . '" class="' . esc_attr($atts['class']) . '" action="' . esc_url($atts['action']) . '" method="' . esc_attr($atts['method']) . '">';
+//     $output .= do_shortcode($content);
+//     $output .= '</form>';
 
-    return $output;
-}
-add_shortcode( 'custom_form', 'form_shortcode' );
-add_action('init', 'form_shortcode');
+//     return $output;
+// }
+// add_shortcode( 'custom_form', 'form_shortcode' );
+// add_action('init', 'form_shortcode');
 
 function custom_textfield_shortcode( $atts ) {
     $atts = shortcode_atts( array(
