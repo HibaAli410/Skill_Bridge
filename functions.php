@@ -101,5 +101,60 @@ function custom_taxonomy() {
         ));
       }
         add_action('init', 'course_instructor_taxonomy');
+       
+           
 //hook into the init action and call create_book_taxonomies when it fires
+
+// function foobar_func( $atts ){
+    
+// 	return "foo and bar";
+// }
+//add_shortcode( 'foobar', 'foobar_func' );
+//add_action('init', 'foobar_func');
+function form_shortcode($atts,$content) {
+    $atts = shortcode_atts(array(
+        'id' => '',
+        'class' => '',
+        'action' => '',
+        'method' => 'get'
+    ), $atts, 'form');
+
+    $output = '<form id="' . esc_attr($atts['id']) . '" class="' . esc_attr($atts['class']) . '" action="' . esc_url($atts['action']) . '" method="' . esc_attr($atts['method']) . '">';
+    $output .= do_shortcode($content);
+    $output .= '</form>';
+
+    return $output;
+}
+add_shortcode( 'custom_form', 'form_shortcode' );
+add_action('init', 'form_shortcode');
+
+function custom_textfield_shortcode( $atts ) {
+    $atts = shortcode_atts( array(
+        'type' => '',
+        'label' => '',
+        'name'  => '',
+        'placeholder' => '',
+        'class' =>'',
+    ), $atts, 'custom_textfield' );
+
+    $output = '<input type="' . esc_attr( $atts['type'] ) . '" class="' . esc_attr( $atts['class'] ) . '" id="' . esc_attr( $atts['name'] ) . '" name="' . esc_attr( $atts['name'] ) . '" placeholder="' . esc_attr( $atts['placeholder'] ) . '">';
+
+    return $output;
+}
+
+add_shortcode( 'custom_textfield', 'custom_textfield_shortcode' );
+add_action('init', 'custom_textfield_shortcode');
+function submit_button_shortcode($atts) {
+    $atts = shortcode_atts(array(
+        'text' => '',
+        'class' => 'button-primary'),
+         $atts, 'submit_button');
+
+    return '<button type="submit" text="' . esc_attr($atts['text']) . '" class="' . esc_attr($atts['class']) . '">' . esc_html($atts['text']) . '</button>';
+}
+add_shortcode('submit_button', 'submit_button_shortcode');
+add_action('init', 'submit_button_shortcode');
+
+
+
 ?>

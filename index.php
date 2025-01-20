@@ -18,14 +18,12 @@
             </div>
         </div>
         <div class="inline-flex ms-auto rounded-md gap-3 shadow-sm" role="group ">
-            <div type="button" onclick=""
-                class="px-8 py-3 text-center font-medium font-large text-xl text-txt_color  bg-primary border border-primary rounded-lg ">
-                Explore
-                Courses</div>
-            <div type="button"
-                class="px-8 py-3 text-center font-semibold font-large text-xl text-secondary bg-txt_color rounded-lg tracking-wide">
-                View
-                Pricing</div>
+        <?php $menu_items = wp_get_nav_menu_items("explore-courses");  ?>
+       
+       <?php foreach ($menu_items as $menu_item) { ?>
+        <a href="<?php echo $menu_item->url  ?>" class="px-8 py-3 text-center font-medium font-large text-xl text-txt_color  bg-primary border border-primary rounded-lg ">
+        <?php echo $menu_item->title; ?></a>
+           <?php  } ?>
         </div>
     </div>
 </div>
@@ -191,7 +189,7 @@
 <div class="flex justify-center p-12  flex-wrap ">
     <div class="container justify-center h-auto w-full">
 
-        <div class="grid grid-cols-1 lg:grid-cols-2  gap-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2  gap-4 ">
             <?php   
                     $course_params = array('post_type' => 'courses', 'numberposts' => -1);
                     $courses = get_posts($course_params);
@@ -226,11 +224,11 @@
                     <div
                         class="inline-flex text-center font-bold px-3 py-2 font-semibold text-lg text-secondary bg-txt_color rounded-lg ml-44">
                         <?php
-                                           foreach($course_terms as $course_term) {}
+                                           foreach($course_terms as $course_term) {
                                            echo  "By ".$course_term->name;        
 
                                                 } ?></div>
-
+                    <?php } ?>
 
 
                 </div>
@@ -245,7 +243,7 @@
 
                 <div
                     class="inline-flex w-full justify-center px-6 py-4 text-sm font-medium text-center text-secondary bg-wit_gray_95 rounded-lg">
-                    <a href="<?php the_permalink($course->ID); ?>">Get it Now
+                    <a href="<?php echo the_permalink($course->ID); ?>">Get it Now
                     </a>
                 </div>
 

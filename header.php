@@ -86,14 +86,14 @@
                  foreach ( $menu_buttons as $menu_button) { 
                                 if($menu_button->title === "Sign Up"){
                                     ?>
-                <a href=<?php echo $menu_button->url; ?>"
+                <a href="<?php echo $menu_button->url;// get_post_type_archive_link('signup');?>"
                     class="px-8 py-3 text-center font-semibold font-large text-xl text-secondary bg-transparent rounded-lg tracking-wide">
                     <?php echo $menu_button->title; ?></a>
 
                 <?php } 
                             else {?>
 
-                <a href=<?php echo $menu_button->url; ?>"
+                <a href="<?php echo $menu_button->url; //get_post_type_archive_link('login');  ?>"
                     class="px-8 py-3 text-center font-medium font-large text-xl text-txt_color  bg-primary border border-primary rounded-lg ">
                     <?php  echo $menu_button->title; ?></a>
                 <?php } }?>

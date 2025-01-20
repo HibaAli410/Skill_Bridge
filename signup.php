@@ -1,4 +1,4 @@
-<?php //Template Name: log in ?>
+<?php //Template Name: sign up ?>
 <?php get_header(); ?>
 
 <div class="flex justify-center  flex-wrap ">
@@ -88,8 +88,9 @@
                 <div class="container bg-home pt-4">
                     <div class="Block bg-home rounded-lg">
 
-                        <div class="text-4xl font-semibold text-center">Login</div>
-                        <div class="text-sm mt-4 text-carbon_30 text-center">Welcome back! Please log in to access your account.</div>
+                        <div class="text-4xl font-semibold text-center">Sign Up </div>
+                        <div class="text-sm mt-4 text-carbon_30 text-center">Create an account to unlock exclusive
+                            features.</div>
 
                     </div>
                     <div class="block m-4 p-4">
@@ -108,7 +109,7 @@
                         Div 5
                     </div>
                     <div class="block m-4 p-4 justify-center">
-                       <button class="w-full bg-primary  px-6 py-4 text-me text-home font-medium text-center rounded-lg">Login</button>
+                       <button class="w-full bg-primary  px-6 py-4 text-me text-home font-medium text-center rounded-lg">Sign Up</button>
                     </div>
                     <div class="block m-4 p-4">
                         Div 7
