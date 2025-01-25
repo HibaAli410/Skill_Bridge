@@ -87,36 +87,54 @@
             <div class="flex justify-left m-2 p-8">
                 <div class="container bg-home pt-4">
                     <div class="Block bg-home rounded-lg">
-
+                    <?php $form = '[form id="login_form" action="abc.php"]';
+                    echo do_shortcode($form); ?>
                         <div class="text-4xl font-semibold text-center">Login</div>
                         <div class="text-sm mt-4 text-carbon_30 text-center">Welcome back! Please log in to access your account.</div>
 
                     </div>
-                    <div class="block m-4 p-4">
-                        Div 1
+                    <div class="block m-4 pt-4 pl-4 pb-4 pr-4">
+                        <span>Email</span>
+                        <?php $email = '[custom_textfield type="email" label="Enter Your Email" class="mt-2  border-1 border-wit_gray_95 bg-medwhite w-full p-2 hover:border-wit_gray_95 h-10 rounded" name="email" placeholder="Enter your Email"]';
+                   ?>
+                        <span class="block-inline "><?php echo do_shortcode($email); ?></span>
                     </div>
-                    <div class="block m-4 p-4">
-                        Div 2
+                    <div class="block m-4 pt-0 pl-4 pb-4 pr-4">
+                        <span>Password</span>
+                        <?php $password = '[custom_textfield type="password" class="mt-2  border-1 border-wit_gray_95 bg-medwhite w-full p-2 hover:border-wit_gray_95 h-10 rounded" name="password" placeholder="Enter your Password"]';
+                   ?>
+                        <span class="block-inline "><?php echo do_shortcode($password); ?></span>
                     </div>
-                    <div class="block m-4 p-4">
-                        Div 3
+                    <div class="flex mb-4 mt-0 ml-4 mr-4 pt-0 pl-4 pb-4 pr-4 justify-end">
+                        <span>Forgot Password ?</span>
                     </div>
-                    <div class="block m-4 p-4">
-                        Div 4
+                    <div class="block m-4 pt-0 pl-4 pb-4 pr-4">
+
+                        <?php $Check = '[custom_textfield type="checkbox" class="mt-2 w-4 h-4 border-1 border-wit_gray_95 bg-medwhite w-full hover:border-wit_gray_95  rounded" name="done" ]';
+                   ?>
+                        <span class="inline-block "><?php echo do_shortcode($Check); ?></span>
+                        <span>Remember Me</span>
                     </div>
-                    <div class="block m-4 p-4">
-                        Div 5
-                    </div>
+                    
                     <div class="block m-4 p-4 justify-center">
                        <button class="w-full bg-primary  px-6 py-4 text-me text-home font-medium text-center rounded-lg">Login</button>
                     </div>
-                    <div class="block m-4 p-4">
-                        Div 7
+                    <div class="flex m-4 pt-0 pl-4 pb-4 pr-4 ">
+                        <div class="flex-auto w-49 border-1 border-b-2 border-wit_gray_95"></div>
+                        <div>OR</div>
+                        <div class="flex-auto w-49 border-1 border-b-2 border-wit_gray_95"> </div>
                     </div>
+                    
                     <div class="block m-4 p-4">
-                    <button class="w-full bg-back_color_home  px-6 py-4 text-me text-secondary  font-medium text-center rounded-lg">Sign Up With Google</button>
-                   
+                    <?php $google_button = '[submit_button type="submit" text = "Login With Google" class="text-secondary h-12 border-1 w-full bg-back_color_home text-me text-home font-medium text-center rounded-lg" name ="google_button" ]';
+                   ?>
+                    <!-- <button class="w-full bg-back_color_home  px-6 py-4 text-me text-secondary  font-medium text-center rounded-lg">Sign Up With Google</button>
+                    --><span><?php echo do_shortcode($google_button); ?></span>
                     </div>
+                    <div class="block m-4 pt-0 pl-4 pb-4 pr-4  text-center" >
+                        <span>Don’t have an account? <u>Sign Up </u></span><span> <i class="material-symbols-outlined font-sm">north_east</i></span>
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>

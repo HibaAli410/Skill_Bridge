@@ -91,33 +91,72 @@
                         <div class="text-4xl font-semibold text-center">Sign Up </div>
                         <div class="text-sm mt-4 text-carbon_30 text-center">Create an account to unlock exclusive
                             features.</div>
+                    </div>
+                    <?php $form = '[form id="signup_form" action="abc.php"]';
+                    echo do_shortcode($form); ?>
+                    <div class="block m-4 p-4">
+                        <span>Full Name</span>
+                        <?php $fname = '[custom_textfield type="text" label="Enter First Name" class="mt-2 border-1 border-wit_gray_95 bg-medwhite w-full p-2 hover:border-wit_gray_95 h-10 rounded" name="fname" placeholder="Enter Your Name"]';
+                 ?>
+                        <span class="block-inline "><?php echo do_shortcode($fname); ?></span>
+                    </div>
+                    <div class="block m-4 pt-0 pl-4 pb-4 pr-4">
+                        <span>Email</span>
+                        <?php $email = '[custom_textfield type="email" label="Enter Your Email" class="mt-2  border-1 border-wit_gray_95 bg-medwhite w-full p-2 hover:border-wit_gray_95 h-10 rounded" name="email" placeholder="Enter your Email"]';
+                   ?>
+                        <span class="block-inline "><?php echo do_shortcode($email); ?></span>
+                    </div>
+                    <div class="block m-4 pt-0 pl-4 pb-4 pr-4">
+                        <span>Password</span>
+                        <?php $password = '[custom_textfield type="password" class="mt-2  border-1 border-wit_gray_95 bg-medwhite w-full p-2 hover:border-wit_gray_95 h-10 rounded" name="password" placeholder="Enter your Password"]';
+                   ?>
+                        <span class="block-inline "><?php echo do_shortcode($password); ?></span>
+                    </div>
+                    <div class="block m-4 pt-0 pl-4 pb-4 pr-4">
+
+                        <?php $Check = '[custom_textfield type="checkbox" class="mt-2 w-4 h-4 border-1 border-wit_gray_95 bg-medwhite w-full hover:border-wit_gray_95  rounded" name="done" ]';
+                   ?>
+                        <span class="inline-block "><?php echo do_shortcode($Check); ?></span>
+                        <span>I agree with Terms of Use and Privacy Policy</span>
+                    </div>
+
+                    <div class="block m-4 mt-0 pt-0 pl-4 pb-4 pr-4 justify-center">
+                        <?php $button = '[submit_button type="submit" text = "Sign Up" class=" h-12 border-1 w-full bg-primary text-me text-home font-medium text-center rounded-lg" name ="sign_up" ]';
+                   ?>
+                        <span><?php echo do_shortcode($button); ?></span>
 
                     </div>
-                    <div class="block m-4 p-4">
-                        Div 1
+                    <div class="flex m-4 pt-0 pl-4 pb-4 pr-4 ">
+                        <div class="flex-auto w-49 border-1 border-b-2 border-wit_gray_95"></div>
+                        <div>OR</div>
+                        <div class="flex-auto w-49 border-1 border-b-2 border-wit_gray_95"> </div>
                     </div>
-                    <div class="block m-4 p-4">
-                        Div 2
+                    <div class="block m-4 pt-0 pl-4 pb-4 pr-4 ">
+                        <?php $google_button = '[submit_button type="submit" text = "Sign Up With Google" class="text-secondary h-12 border-1 w-full bg-back_color_home text-me text-home font-medium text-center rounded-lg" name ="google_button" ]';
+                   ?>
+                        <span><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
+                                viewBox="0 0 48 48">
+                                <path fill="#fbc02d"
+                                    d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12	s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20	s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z">
+                                </path>
+                                <path fill="#e53935"
+                                    d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039	l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z">
+                                </path>
+                                <path fill="#4caf50"
+                                    d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36	c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z">
+                                </path>
+                                <path fill="#1565c0"
+                                    d="M43.611,20.083L43.595,20L42,20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z">
+                                </path>
+                            </svg>
+                        </span>
+                        <span><?php echo do_shortcode($google_button); ?></span>
+
                     </div>
-                    <div class="block m-4 p-4">
-                        Div 3
+                    <div class="block m-4 pt-0 pl-4 pb-4 pr-4  text-center" >
+                        <span>Already have an account? <u>Login</u></span><span> <i class="material-symbols-outlined font-sm">north_east</i></span>
                     </div>
-                    <div class="block m-4 p-4">
-                        Div 4
-                    </div>
-                    <div class="block m-4 p-4">
-                        Div 5
-                    </div>
-                    <div class="block m-4 p-4 justify-center">
-                       <button class="w-full bg-primary  px-6 py-4 text-me text-home font-medium text-center rounded-lg">Sign Up</button>
-                    </div>
-                    <div class="block m-4 p-4">
-                        Div 7
-                    </div>
-                    <div class="block m-4 p-4">
-                    <button class="w-full bg-back_color_home  px-6 py-4 text-me text-secondary  font-medium text-center rounded-lg">Sign Up With Google</button>
-                   
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
