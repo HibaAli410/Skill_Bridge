@@ -37,32 +37,87 @@ if (have_posts()) {
     </div>
 </div>
 <?php 
-echo $postid;
-$fields_groups = acf_get_field_groups(array( 'post_id' => $postid ) );
-
-// Loop through each field group
-foreach ($fields_groups as $field_group) {
-    // Get the field group ID
-    $field_group_id = $field_group['ID'];
-    $fields = acf_get_fields($field_group_id);
-    echo "<br>".$field_group_id;
-  
-    
-    
-}
-
-
-// $group_fields = get_group_fields('lessons detail h1');
-
-// foreach($group_fields as $field){
-//    $label = $field['label'];
-//    $value = $field['value'];
-//    echo $label."is ".$value;
-//    // etc...
-// }
+// $f = get_sub_field('lesson_number');
+// echo $f;
+// var_dump($f);
+$col = "culumone";
+ $field = acf_get_field("$col");
+var_dump($field);
+$images = get_field('culumone'); // Get the repeater field
+if( have_rows('culumone') ): // Loop through the repeater field
+    while( have_rows('culumone') ): the_row();
+        $image = get_sub_field('lesson_name'); // Get the subfield value
+        echo $image;
+    endwhile;
+endif;
 
 
-} }
+$post = get_page_by_title('lessons detail h2', 'OBJECT', 'acf-field-group');
+
+if ($post) {
+    $field_group_id = $post->ID;
+    $sub_fields = acf_get_fields($field_group_id);
+  //var_dump($sub_fields);
+                    foreach ($sub_fields as $sub_field) 
+                    {
+
+                        if ($sub_field['type'] == 'group') 
+                            {
+                                $sub_group_id = $sub_field['ID'];
+                                $sub_group_name = $sub_field['name'];
+                                echo "<br>".$sub_group_id;
+                                echo $sub_group_name."<br>";
+                                $col =  $sub_group_name;
+                               
+                                $hhh = acf_get_field("$sub_group_name");
+                               //var_dump($hhh); //print_r($hhh);
+                               foreach($hhh as $key=>$values){
+                                            //var_dump($values);
+                                        if( have_rows($values) ): 
+                                            while( have_rows($values) ): the_row(); 
+                                           
+                                           echo "<br> helloW";        
+                                                    
+                                            endwhile;
+                                        endif; 
+                                    }
+
+                                    }
+                                }
+                   
+                        }
+
+
+
+
+       
+    //     $culums = array('culumone', 'culumtwo', 'culumthree');
+    //     foreach($culums as $key){
+    //        $culums =  acf_get_field($key);
+    //        //var_dump($fields);
+        
+         
+    //     foreach($culums as $key=>$values){
+           
+    //         if( have_rows($values) ): 
+    //             while( have_rows($values) ): the_row(); 
+
+    //                     $fields = array('lesson_number','lesson_name','lesson_duration');
+                        
+    //                     foreach($fields as $detail){
+    //                         $show = get_sub_field("$detail");
+    //                        // var_dump($show);
+    //                         echo "<br>".$show ;
+    //                     }
+                        
+               
+    //             endwhile;
+    //         endif; 
+    //     }
+    // }
+   
+
+    }}
 
  ?>
 
