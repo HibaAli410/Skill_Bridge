@@ -30,7 +30,9 @@
                     carbon_30: '#59595A',
                     black_30: '$4C4C4D',
                     peach: '#FFF9F0',
+                    peach_background: '#FFEACC',
                     check_color: '#FFF4E5',
+
                 }
             }
         }

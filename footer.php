@@ -2,7 +2,7 @@
 
 <footer>
 
-<div class="container max-w-full px-4 rounded-lg justify-between bg-txt_color  ">
+<div class="container max-w-full px-4 rounded-lg justify-between bg-txt_color mt-6 ">
     <div class="grid grid-cols-1 md:w-full lg:grid-cols-2  bg-txt_color pt-4 pl-8 pb-0 pr-8  ">
         <div class=" md:w-ful pb-4 pt-8 px-10 m-4 rounded-lg border-b-2 ">
             <div class="flex  ">

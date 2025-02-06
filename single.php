@@ -37,19 +37,7 @@ if (have_posts()) {
     </div>
 </div>
 <?php 
-// $f = get_sub_field('lesson_number');
-// echo $f;
-// var_dump($f);
-$col = "culumone";
- $field = acf_get_field("$col");
-var_dump($field);
-$images = get_field('culumone'); // Get the repeater field
-if( have_rows('culumone') ): // Loop through the repeater field
-    while( have_rows('culumone') ): the_row();
-        $image = get_sub_field('lesson_name'); // Get the subfield value
-        echo $image;
-    endwhile;
-endif;
+
 
 
 $post = get_page_by_title('lessons detail h2', 'OBJECT', 'acf-field-group');
@@ -68,53 +56,23 @@ if ($post) {
                                 echo "<br>".$sub_group_id;
                                 echo $sub_group_name."<br>";
                                 $col =  $sub_group_name;
-                               
                                 $hhh = acf_get_field("$sub_group_name");
-                               //var_dump($hhh); //print_r($hhh);
-                               foreach($hhh as $key=>$values){
-                                            //var_dump($values);
-                                        if( have_rows($values) ): 
-                                            while( have_rows($values) ): the_row(); 
-                                           
-                                           echo "<br> helloW";        
-                                                    
-                                            endwhile;
-                                        endif; 
-                                    }
+                                var_dump($hhh);
+                                
+                             }
 
-                                    }
-                                }
+                       
+                    }
+                    
+                    
                    
-                        }
+            }
 
 
 
 
        
-    //     $culums = array('culumone', 'culumtwo', 'culumthree');
-    //     foreach($culums as $key){
-    //        $culums =  acf_get_field($key);
-    //        //var_dump($fields);
-        
-         
-    //     foreach($culums as $key=>$values){
-           
-    //         if( have_rows($values) ): 
-    //             while( have_rows($values) ): the_row(); 
-
-    //                     $fields = array('lesson_number','lesson_name','lesson_duration');
-                        
-    //                     foreach($fields as $detail){
-    //                         $show = get_sub_field("$detail");
-    //                        // var_dump($show);
-    //                         echo "<br>".$show ;
-    //                     }
-                        
-               
-    //             endwhile;
-    //         endif; 
-    //     }
-    // }
+   
    
 
     }}
